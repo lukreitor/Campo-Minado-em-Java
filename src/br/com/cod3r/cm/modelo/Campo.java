@@ -113,25 +113,26 @@ public class Campo {
 
     public String toString() {
         if (marcado) {
-            return "\033[32mx\033[0m";
+            return "x";
+            //return "\033[32mx\033[0m";
         }
         if (aberto && minado) {
-            //return "*";
+            return "*";
 
             // exibir * com fundo vermelho
-            return "\033[41m*\033[0m";
+            //return "\033[41m*\033[0m";
         }
         if (aberto && minasNaVizinhanca() > 0) {
-            //return Long.toString(minasNaVizinhanca());
-            return "\033[33m" + minasNaVizinhanca() + "\033[0m";
+            return Long.toString(minasNaVizinhanca());
+            //return "\033[33m" + minasNaVizinhanca() + "\033[0m";
         }
         if (aberto) {
-            //return " ";
+            return " ";
             // exibir espaço em branco com fundo verde
-            return "\033[42m \033[0m";
+            //return "\033[42m \033[0m";
         }
-        //return "?";
+        return "?";
         // exibir espaço em branco com fundo cinza
-        return "\033[47m \033[0m";
+        //return "\033[47m \033[0m";
     }
 }
